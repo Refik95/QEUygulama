@@ -1,6 +1,6 @@
 
-@QEUygulumaWebTestCases
-  Feature: Web Test Cases
+@QEUygulumaTestCases
+  Feature: Test Cases
 
   @CheckLoginpage
   Scenario: Check if user is on loginpage
