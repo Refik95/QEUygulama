@@ -3,9 +3,12 @@ package Util;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +24,18 @@ public class DriverFactory {
         } else if (browser.equals("Safari")){
             WebDriverManager.safaridriver().setup();
             driver = new SafariDriver();
-        }else {
+        } else if (browser.equals("ChromeMobile")) {
+            ChromeOptions mobileWebChromeOptions = new ChromeOptions();
+            WebDriverManager.chromedriver().setup();
+
+            Map<String, String> mobileEmulation = new HashMap<>();
+
+            mobileEmulation.put("deviceName", "iPhone 7");
+
+            mobileWebChromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+            driver = new ChromeDriver(mobileWebChromeOptions);
+
+        } else {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
