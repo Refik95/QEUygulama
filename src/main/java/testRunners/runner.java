@@ -5,11 +5,13 @@ import io.cucumber.testng.CucumberOptions;
 import org.openqa.selenium.WebDriver;
 
 @CucumberOptions(
-        features = {"src/test/java/Web/features","src/test/java/MobileWeb/features"},
-        glue = {"Web.webStepDefinitions","Util","MobileWeb.mobileStepDefinitions"},
+        features = {"src/test/java/Web/features"},
+        glue = {"Web.webStepDefinitions","Util"},
         tags = "",
         plugin = {
-                "summary","pretty","html:Reports/CucumberReport/Reports.html"
+                "pretty",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+                "html:target/cucumber-reports.html"
         }
 )
 public class runner extends AbstractTestNGCucumberTests {
