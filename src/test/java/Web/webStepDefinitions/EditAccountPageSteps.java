@@ -16,9 +16,9 @@ public class EditAccountPageSteps {
         editAccountPage.checkEditAccountVisibility();
     }
 
-    @When("User updates account name")
-    public void userUpdatesAccountName() {
-        editAccountPage.accountName("Refik Test");
+    @When("User updates account name with {string}")
+    public void userUpdatesAccountName(String accountName) {
+        editAccountPage.accountName(accountName);
     }
 
     @When("User clicks update button")

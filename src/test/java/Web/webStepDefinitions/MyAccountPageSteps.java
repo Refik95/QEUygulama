@@ -69,4 +69,9 @@ public class MyAccountPageSteps {
         myAccountPage.driverRefresh();
     }
 
+    @Then("User should see that the account name has changed to {string}")
+    public void userShouldSeeThatTheAccountNameHasChanged(String newAccountName) {
+        Assert.assertTrue(myAccountPage.checkUsername(newAccountName));
+    }
+
 }

@@ -99,8 +99,8 @@
       When User enters correct username and password
       When User clicks open money transfer button
       When User clicks edit account
-      When User updates account name
+      When User updates account name with "Test Kullanıcısı"
       When User clicks update button
-      Then User should see that the account name has changed
+      Then User should see that the account name has changed to "Test Kullanıcısı"
 
 

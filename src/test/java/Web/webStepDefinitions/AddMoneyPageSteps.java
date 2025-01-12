@@ -50,5 +50,10 @@ public class AddMoneyPageSteps {
         addMoneyPage.clickAddButton();
     }
 
+    @Then("User should see required text")
+    public void userShouldSeeRequiredText() throws InterruptedException {
+        addMoneyPage.checkRequiredTxtVisibility();
+    }
+
 
 }

@@ -22,6 +22,9 @@ public class MyAccountPage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(css = "div[class='css-175oi2r r-14lw9ot r-z2wwpe r-edyy15'] div:nth-child(1) div:nth-child(2)")
+    WebElement username;
+
     @FindBy(xpath = "//div[contains(text(),'Transfer money')]")
     WebElement transferMoneyButton;
 
@@ -62,6 +65,14 @@ public class MyAccountPage {
 
     public double getCurrentAmount() {
         return Double.parseDouble(transferMoneyAmount.getText().replace(",", ""));
+    }
+
+    public boolean checkUsername(String newUsername) {
+        return wait.until(ExpectedConditions.textToBePresentInElement(username, newUsername));
+    }
+
+    public String getUsername() {
+        return username.getText();
     }
 
     public void driverRefresh() {
