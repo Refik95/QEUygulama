@@ -20,8 +20,14 @@ public class MyAccountMobilePage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(css = "div[class='css-175oi2r r-14lw9ot r-z2wwpe r-edyy15'] div:nth-child(1) div:nth-child(2)")
+    WebElement usernameMobile;
+
     @FindBy(xpath = "//div[contains(text(),'Transfer money')]")
     WebElement transferMoneyButtonMobile;
+
+    @FindBy(css = "div.css-175oi2r.r-14lw9ot.r-z2wwpe.r-edyy15 > div.css-175oi2r > div.css-175oi2r")
+    WebElement transferMoneyAmountMobile;
 
     @FindBy(xpath = "//div[contains(text(),'Add money')]")
     WebElement addMoneyButtonMobile;

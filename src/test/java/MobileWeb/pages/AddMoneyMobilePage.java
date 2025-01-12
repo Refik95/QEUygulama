@@ -21,7 +21,7 @@ public class AddMoneyMobilePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//input[@class='css-11aywtz r-6taxm2 r-1mqtkb5 r-z2wwpe r-rs99b7 r-h3s6tt r-1qhn6m8']")
+    @FindBy(css = "input.css-11aywtz.r-6taxm2.r-1mqtkb5.r-z2wwpe.r-rs99b7.r-h3s6tt.r-1qhn6m8")
     WebElement cardNumberMobile;
 
     @FindBy(xpath = "//div//div[4]//input[1]")
@@ -41,6 +41,9 @@ public class AddMoneyMobilePage {
 
     @FindBy(xpath = "//div[@class='css-146c3p1 r-ubezar r-vw2c0b']")
     WebElement addMoneyTextMobile;
+
+    @FindBy(xpath = "//body/div/div[@class='r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-sfbmgh r-1ielgck r-1uypc71 r-xx3c9p r-6dt33c']/div[@class='css-175oi2r']/div[@role='dialog']/div[@class='css-175oi2r r-13awgt0 r-ipm5af']/div[@class='css-175oi2r r-1awozwy r-13awgt0 r-1777fci r-1ygmrgt']/div[@class='css-175oi2r r-1awozwy r-14lw9ot r-1xfd6ze r-1rr9as1 r-129l8ac r-1ik5qf4 r-e7q0ms']/div[@class='css-175oi2r r-1awozwy r-13awgt0 r-1777fci r-nsbfu8 r-13qz1uu']/div[@class='css-175oi2r r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx r-1pi2tsx r-13qz1uu']/div[@class='css-175oi2r']/div[2]/div[2]")
+    WebElement requiredTextMobile;
 
     public void cardNumberMobile(String cardNumber) {
         this.cardNumberMobile.sendKeys(cardNumber);

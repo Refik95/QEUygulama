@@ -13,36 +13,47 @@ public class AddMoneyMobilePageSteps {
     WebDriver driver = DriverFactory.getDriver();
     AddMoneyMobilePage addMoneyPageMobile = new AddMoneyMobilePage(driver);
 
-    @Then("User should see Add money title on mobile web")
+    @When("User should see Add money page title on Mobile Web")
+    public void userShouldSeeAddMoneyPageTitleMobile() throws InterruptedException {
+        Thread.sleep(1000);
+        addMoneyPageMobile.checkAddMoneyVisibilityMobile();
+    }
+
+    @Then("User should see Add money title on Mobile Web")
     public void userShouldSeeAddMoneyTitleMobile() {
         addMoneyPageMobile.checkAddMoneyVisibilityMobile();
     }
 
-    @When("User enters card number on mobile web")
-    public void userEntersCardNumberMobile() {
-        addMoneyPageMobile.cardNumberMobile("1234 1234 1234 1234 1234");
+    @When("User enters {string} to card number field on Mobile Web")
+    public void userEntersCardNumberMobile(String cardNumberField) {
+        addMoneyPageMobile.cardNumberMobile(cardNumberField);
     }
 
-    @When("User enters card holder on mobile web")
-    public void userEntersCardHolderMobile() {
-        addMoneyPageMobile.cardHolderMobile("Refik Erkan Gunhan");
+    @When("User enters {string} to card holder field on Mobile Web")
+    public void userEntersCardHolderMobile(String cardHolderField) {
+        addMoneyPageMobile.cardHolderMobile(cardHolderField);
     }
 
-    @When("User enters expiry date on mobile web")
-    public void userEntersExpiryDatMobile() {
-        addMoneyPageMobile.expiryDateMobile("1026");
+    @When("User enters {string} to expiry date field on Mobile Web")
+    public void userEntersExpiryDateMobile(String expiryDateField) {
+        addMoneyPageMobile.expiryDateMobile(expiryDateField);
     }
 
-    @When("User enter cvv on mobile web")
-    public void userEntersCvvMobile() {
-        addMoneyPageMobile.cvvMobile("110");
+    @When("User enter {string} to cvv field on Mobile Web")
+    public void userEntersCvvMobile(String cvvField) {
+        addMoneyPageMobile.cvvMobile(cvvField);
     }
 
-    @When("User enters money amount to add on mobile web")
-    public void userEntersMoneyAmountToAddMobile() {addMoneyPageMobile.setAddMoneyAmountMobile("1000");}
+    @When("User enters money amount to add {string} on Mobile Web")
+    public void userEntersMoneyAmountToAddMobile(String moneyAmount) {addMoneyPageMobile.setAddMoneyAmountMobile(moneyAmount);}
 
-    @When("User clicks add button on mobile web")
+    @When("User clicks add button on Mobile Web")
     public void userClicksAddButtonMobile() {
         addMoneyPageMobile.clickAddButtonMobile();
+    }
+
+    @Then("User should see required text on Mobile Web")
+    public void userShouldSeeRequiredTextMobile() throws InterruptedException {
+        addMoneyPageMobile.checkAddMoneyVisibilityMobile();
     }
 }
